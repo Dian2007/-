@@ -1,0 +1,39 @@
+# include <iostream>
+#include <ctime>
+using namespace std;
+int main()
+{
+    srand (time(0));
+ 
+    unsigned short int a, b;
+    cout << "Vvedite razmer matrizi:\t";
+    cin >> a >> b;
+    
+    int Array [256][256];
+ 
+    
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            Array [i][j] = rand() % 101 - 50;
+            cout << Array [i][j] << '\t';
+        }
+        cout << endl;
+    }
+ 
+    
+    int c = 0;
+    for (int i = 0; i < a; i++)
+    {
+        for (int j = 0; j < b; j++)
+        {
+            if (Array [i][j] <= 0)
+                c++;
+        }
+    }
+ 
+    cout << "Kolichestvo otrytcatelnyh elementov -\t" << c << endl;
+    
+    return 0;
+}
